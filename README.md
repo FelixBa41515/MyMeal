@@ -1,8 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/6M1uOS06)
 
-# PWA Link
-https://mymealbackendframeworks.web.app
-
 # Inleiding
 
 De evaluatie van het OPO Backend frameworks bestaat voor 100% uit een examenopdracht die je **individueel** maakt,
@@ -21,74 +18,6 @@ Als je het project in native JavaScript, React of Vue bouwt kan je **geen** punt
 De UI moet adaptive zijn, i.e. deze moet zich automatisch aanpassen aan het besturingssysteem waarop de applicatie
 draait (iOS of Android).
 
-## GitHub Classroom
-
-Je maakt verplicht gebruikt van de GitHub classroom om je project in te zenden, enkel inzendingen die hierin geüpload
-zijn en die op de hoofdbranche van je repository staan worden beoordeeld.
-De link naar de assignment voor jouw groep, vind je op Canvas.
-
-## Eerste examenkans
-
-Tijdens de eerste examenkans kan je 10% verdienen doorheen het jaar, de overige 90% is te verdienen met je
-finale inzending en de mondelinge verdediging hiervan.
-
-## Tweede examenkans
-
-Als je een herexamen moet afleggen, dan kan je 100% verdienen met je finale inzending en de mondelinge verdediging
-hiervan.
-
-Je mag voor je herexamen verder werken aan het project dat je tijdens de eerste examenkans gebouwd hebt of een volledig
-nieuw project bouwen.
-
-# Permanente evaluatie
-
-De permanente evaluatie van dit opleidingonderdeel bestaat uit het bouwen van een deel van de UI van je applicatie.
-Je bouwt minstens 2 van de schermen die je in je uiteindelijke applicatie zal gebruiken en je beschrijft de
-functionaliteiten die je in je applicatie wil verwerken.
-
-**De schermen die je tijdens deze permanente evaluatie bouwt en de functionaliteiten die je beschrijft mogen nog
-aangepast worden in je finale inzending als dit beter blijkt voor je project als dit nodig blijkt**.
-
-De permanente evaluatie heeft vooral als doel om je te laten nadenken over wat je gaat bouwen en om feedback te krijgen
-over de haalbaarheid van je idee.
-
-## Prototypes
-
-Je bouwt de UI voor minstens **twee** van de schermen in je applicatie.
-Deze UI wordt uitgebouwd in **Angular** &amp; **Ionic**, je hoeft geen prototyping tool te gebruiken.
-
-De schermen die je uitbouwt moeten niet functioneel zijn, het is enkel nodig om het visuele gedeelte uit te bouwen.
-Dynamische delen van het scherm, zoals filteren van een lijst, een pop-up menu, ... moeten niet (maar mogen natuurlijk
-wel) geïmplementeerd worden.
-Je mag tijdens het bouwen van deze schermen **statische** data, als de data al dynamisch is, verdien je hier geen extra
-punten mee (voor deze opdracht).
-
-## Functionaliteit beschrijvingen
-
-Schrijf voor elke pagina in je applicatie, inclusief diegene waar je een prototype voor gebouwd hebt, een beschrijving
-van de functionaliteiten die je in deze applicatie wil verwerken.
-
-Deze beschrijving hoeft niet lang te zijn, vijf tot tien zinnen kunnen al voldoende zijn.
-Vermeld in deze beschrijving zeker waar je connectie wilt maken met een database, een plug-in wilt gebruiken, een API
-wilt raadplegen, ...
-
-## Inzending
-
-De deadline voor de permanente evaluatie is op **Canvas** te vinden.
-Tegen deze deadline voorzie je een bestand *pe.md* op de hoofdbranche van je project in de GitHub classroom.
-Je voegt alle functionele beschrijvingen hierin toe.
-
-Naast het markdown bestand, voeg je natuurlijk ook je Angular code toe in je repository.
-In deze code moeten minstens twee schermen bezocht kunnen worden, zoals hierboven uitgelegd.
-Als je applicatie niet compileert, krijg je hier ook geen punten voor.
-
-## Feedback
-
-De docent zal in je repository, in je markdown file, een nieuwe sectie toevoegen waarin de feedback verwerkt zit.
-In deze feedback worden eventuele problemen of ontbrekende vereisten aangekaart.
-Dit kan gaan van zaken die buitengewoon moeilijk zullen zijn om te implementeren tot schermen die te veel lijken op
-lesvoorbeelden of te weinig functionaliteit bevatten.
-Als je vragen hebt bij deze feedback, dan kan je jouw docent hierover aanspreken tijdens de les of via mail.
 
 # Projectvereisten
 
@@ -117,22 +46,6 @@ Het is toegestaan om delen uit de lesvoorbeelden of opgeloste oefeningen te herb
 **Als je dit doet, moet je dit op een innovatieve manier doen, anders verdien je hier geen punten mee.**
 Hieronder zijn enkele voorbeelden te vinden, als je toch nog een specifieke vraag hebt over het al dan niet herbruiken
 van bepaalde code, dan contacteer je jouw lector hierover.
-
-* De login-component uit [les 5](https://it-graduaten-javascript.netlify.app/lessen/backend/lecture5.md) mag herbruikt worden, maar dit telt niet mee als een
-  pagina tenzij je hier een uitbreiding aan doet.
-  Bijvoorbeeld het toevoegen van een email/wachtwoord login en de bijhorende meldingen voor het succesvol aanmaken van
-  een account of foutieve wachtwoorden of de optie om een wachtwoord te resetten.
-
-* De login functionaliteit uit [les 5](https://it-graduaten-javascript.netlify.app/lessen/backend/lecture5.md) telt niet mee als online service tenzij je een extra
-  provider configureert.
-  Dit mag eender welke provider zijn, GitHub, Facebook, X (Twitter), Microsoft, ...
-  Als je enkel *Google* en *phone* authentication voorziet zoals in de les, is dit niet voldoende.
-
-* De PhotoService uit [les 3](https://it-graduaten-javascript.netlify.app/lessen/backend/lecture3.md) telt enkel mee voor de plug-in vereisten als je de foto's op
-  een alternatieve manier verwerkt, zoals
-  * het uploaden naar Firebase (of soortgelijk)
-  * het versturen naar een API voor image recognition
-  * het implementeren van een crop functionaliteit
 
 ## Begeleiding
 
