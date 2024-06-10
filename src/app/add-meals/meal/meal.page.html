@@ -1,0 +1,108 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      MyMeal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        MyMeal
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div style="position: relative;">
+    <ng-template #skeleton>
+      <ion-skeleton-text [animated]="true" style="width: 100%; height: 300px;"></ion-skeleton-text>
+    </ng-template>
+    <img [alt]="recipe?.title!" [src]="recipe?.image!" *ngIf="loaded; else skeleton" style="width:100%;"/>
+
+
+
+
+  </div>
+
+  <h1 class="ion-text-center">{{recipe?.title!}}</h1>
+  <div>
+
+    <ion-chip color="warning" *ngIf="recipe?.vegan">Vegan</ion-chip>
+
+
+    <ion-chip color="success" *ngIf="recipe?.vegetarian">Vegetarian</ion-chip>
+
+
+    <ion-chip color="info" *ngIf="recipe?.cheap">Cheap</ion-chip>
+
+
+    <ion-chip color="primary" *ngIf="recipe?.veryHealthy">Healthy</ion-chip>
+
+
+    <ion-accordion-group class="ion-margin-top" value="omschrijving">
+      <ion-accordion value="omschrijving">
+        <ion-item slot="header" color="light">
+          <ion-label>Omschrijving</ion-label>
+        </ion-item>
+        <div slot="content" class="ion-padding">
+          <p [innerHTML]="recipe?.summary!"></p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="ingredienten">
+        <ion-item slot="header" color="light">
+          <ion-label><h2>Ingrediënten</h2></ion-label>
+        </ion-item>
+        <div slot="content" class="ion-padding-top">
+
+          <ion-range aria-label="Aantal personen:" label="Aantal Personen" labelPlacement="start"
+                     class="ion-padding-horizontal" [min]="1"
+                     [max]="12"
+                     [(ngModel)]="chosenServings"
+                     [pin]="true"
+                     [ticks]="true"
+                     [snaps]="true"
+
+          ></ion-range>
+          <ion-list lines="full" class="ion-margin-top" *ngFor="let ingredient of recipe?.extendedIngredients">
+            <ion-item>
+              <ion-label>{{ingredient.name}}: {{(ingredient!.measures!.metric!.amount!/originalServings! * chosenServings!).toFixed(1)}} {{ingredient!.measures!.metric!.unitLong!}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="instructies">
+        <ion-item slot="header" color="light">
+          <ion-label><h2>Instructies</h2></ion-label>
+        </ion-item>
+        <div slot="content" *ngFor="let step of instructions?.steps">
+
+          <ion-card>
+            <ion-card-header>
+              <ion-row class="ion-align-items-center ion-justify-content-center">
+                <ion-card-title class="ion-text-center">Stap {{step.number}}</ion-card-title>
+                <ion-button fill="clear" color="medium" class="ion-no-padding" (click)="speakInstruction(step.step!)">
+                  <ion-icon name="megaphone-outline" size="large"></ion-icon>
+                </ion-button>
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+              {{step.step}}
+            </ion-card-content>
+          </ion-card>
+
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+
+
+  </div>
+</ion-content>

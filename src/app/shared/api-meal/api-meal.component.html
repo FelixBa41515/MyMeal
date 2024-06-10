@@ -1,0 +1,15 @@
+<ion-card>
+  <div class="crop-image" style="position: relative;">
+    <img [alt]="shortRecipe?.title" [src]="shortRecipe?.image" [routerLink]="['meal/', shortRecipe?.id]"/>
+  </div>
+  <ion-card-header>
+    <ion-card-title >{{shortRecipe?.title}}</ion-card-title>
+    <ion-button *ngIf="!saved" (click)="saveRecipe()" class="ion-padding ion-float-end">
+      Add to meals
+    </ion-button>
+    <ion-button *ngIf="saved" disabled="true" class="ion-padding ion-float-end">
+      Saved
+    </ion-button>
+  </ion-card-header>
+
+</ion-card>

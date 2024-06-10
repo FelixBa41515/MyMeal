@@ -1,0 +1,13 @@
+
+<ion-card>
+  <div class="crop-image" style="position: relative;">
+    <img [alt]="recipe.title" [src]="imageUrl" [routerLink]="['meal', recipe.id]"/>
+  </div>
+  <ion-card-header>
+    <ion-card-title >{{recipe.title}}</ion-card-title>
+    <ion-card-subtitle>Preparation time: {{recipe.preparationMinutes}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content [innerHTML]="recipe.summary">
+
+  </ion-card-content>
+</ion-card>

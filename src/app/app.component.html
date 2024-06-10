@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-split-pane contentId="main">
+
+    <!--  the side menu  -->
+    <ion-menu contentId="main">
+      <ion-content *ngIf="authService.isLoggedIn()">
+        <h1 class="ion-text-center">MyMeal</h1>
+
+
+        <ion-list lines="none">
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/home">
+              My Meals
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="add-meals"  class="ion-margin-bottom">
+              Get Inspired!
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle class="ion-margin-top" autoHide="false">
+            <ion-item class="ion-margin-top" (click)="authService.signOut()">
+              Logout
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+
+
+      </ion-content>
+
+    </ion-menu>
+      <ion-router-outlet id="main"></ion-router-outlet>
+      </ion-split-pane>
+</ion-app>

@@ -1,0 +1,139 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Meal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title size="large">Edit Meal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form class="ion-margin" (ngSubmit)="saveRecipe($event)" novalidate>
+    <h2>Recipe details:</h2>
+    <div class="ion-margin-top" *ngIf="noTitle">
+      <ion-text  style="color: var(--ion-color-danger)">*Please fill out title</ion-text>
+    </div>
+    <ion-item class="ion-no-margin">
+      <ion-input label="Title" name="title"  [(ngModel)]="title"></ion-input>
+    </ion-item>
+
+    <div class="ion-margin-top" *ngIf="noSummary">
+      <ion-text style="color: var(--ion-color-danger)">*Please fill out summary</ion-text>
+    </div>
+    <ion-item>
+      <ion-textarea label="Summary" [autoGrow]="true" name="summary" [(ngModel)]="summary"></ion-textarea><ion-icon (click)="pasteText('summary')" name="clipboard-outline"></ion-icon>
+    </ion-item>
+
+    <div class="ion-margin-top" *ngIf="noPrepTime">
+      <ion-text  style="color: var(--ion-color-danger)">*Time must me positive or -1 (unknown)</ion-text>
+    </div>
+    <ion-item>
+      <ion-input label="Preparation time (minutes)" type="number" name="prepTime" [(ngModel)]="prepTime"></ion-input>
+    </ion-item>
+    <div class="ion-margin-top" *ngIf="noServings">
+      <ion-text style="color: var(--ion-color-danger)">*Servings must be between 1-12</ion-text>
+    </div>
+    <ion-item class="ion-margin-bottom">
+      <ion-input label="Servings" type="number" name="servings" [(ngModel)]="servings"></ion-input>
+    </ion-item>
+    <div class="ion-margin-top" *ngIf="noImage">
+      <ion-text style="color: var(--ion-color-danger)">*Please add a picture</ion-text>
+    </div>
+    <img alt="new photo" [src]="photo!.dataUrl" *ngIf="photo"/>
+    <ion-button expand="block" (click)="addPhoto()">
+      <ion-text *ngIf="!photo">
+        Add picture
+      </ion-text>
+      <ion-text *ngIf="photo">
+        Change picture
+      </ion-text>
+    </ion-button>
+
+    <h2>Ingredients:</h2>
+    <div class="ion-margin-bottom" style="border: 1px solid rgba(0, 0, 0, 0.2); padding: 10px;">
+      <div class="ion-margin-top" *ngIf="noIngredient">
+        <ion-text  style="color: var(--ion-color-danger)">*Please fill out ingredient</ion-text>
+      </div>
+      <ion-item>
+        <ion-input label="Ingredient" name="ingredient" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <div class="ion-margin-top" *ngIf="noAmount">
+        <ion-text  style="color: var(--ion-color-danger)">*Please fill out amount</ion-text>
+      </div>
+      <ion-item>
+        <ion-input label="Amount" type="number" name="amount" [(ngModel)]="amount"></ion-input>
+      </ion-item>
+      <div class="ion-margin-top" *ngIf="noUnit">
+        <ion-text  style="color: var(--ion-color-danger)">*Please fill out unit</ion-text>
+      </div>
+      <ion-item>
+        <ion-input label="Unit" name="unit" [(ngModel)]="unit"></ion-input>
+      </ion-item>
+      <ion-button id="check-fields-ingredients" class="ion-margin-vertical" (click)="addIngredient()">
+        <ion-icon name="add"/>
+      </ion-button>
+
+
+      <ion-list [inset]="true" *ngIf="ingredients.length > 0">
+
+        <ion-item class="" *ngFor="let ingredient of ingredients; let index = index">
+          <ion-icon color="danger" size="large" name="trash-outline" (click)="removeIngredient(index)"></ion-icon>
+
+          <ion-text
+            aria-label="ingredient">{{ingredient!.name! + ': ' + ingredient!.measures!.metric!.amount! + ' ' + ingredient!.measures!.metric!.unitLong!}}</ion-text>
+
+        </ion-item>
+      </ion-list>
+      <div *ngIf="noIngredients">
+        <ion-text class="ion-padding" style="color: var(--ion-color-danger)">*Please add an ingredient</ion-text>
+      </div>
+    </div>
+    <h2>Instructions:</h2>
+    <div class="ion-margin-bottom" style="border: 1px solid rgba(0, 0, 0, 0.2); padding: 10px;">
+      <div class="ion-margin-top" *ngIf="noStep">
+        <ion-text  style="color: var(--ion-color-danger)">*Please fill out step</ion-text>
+      </div>
+      <ion-item>
+        <ion-textarea label="Step" [autoGrow]="true"  name="step" [(ngModel)]="stepText"></ion-textarea><ion-icon (click)="pasteText('step')" name="clipboard-outline"></ion-icon>
+      </ion-item>
+
+      <ion-button id="check-fields-steps" class="ion-margin-vertical" (click)="addStep()">
+        <ion-icon name="add"/>
+      </ion-button>
+
+      <ion-list [inset]="true" *ngIf="instructions.steps!.length > 0">
+
+        <ion-item class="" *ngFor="let step of instructions.steps!; let index = index">
+          <div class="ion-padding-vertical" style="display: flex; align-items: center;">
+            <ion-icon color="danger" name="trash-outline" size="large" (click)="removeStep(index)" style="flex: 0 0 auto;"></ion-icon>
+            <ion-text aria-label="step" style="flex: 1;">{{ step.number }}: {{ step.step }}</ion-text>
+          </div>
+        </ion-item>
+
+      </ion-list>
+      <div *ngIf="noSteps">
+        <ion-text class="ion-padding" style="color: var(--ion-color-danger)">*Please add a step</ion-text>
+      </div>
+    </div>
+    <ion-list lines="none">
+    <ion-item>
+      <ion-checkbox labelPlacement="end" [(ngModel)]="vegetarian" name="vegetarian" justify="start">Vegetarian</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" name="vegan" [(ngModel)]="vegan">Vegan</ion-checkbox>
+    </ion-item>
+    </ion-list>
+    <ion-button [disabled]="!saved" class="ion-margin-top"  type="submit" id="submit" >
+      <ion-text *ngIf="saved">Save</ion-text>
+      <ion-spinner name="dots" style="width: 30px; height: 20px;" *ngIf="!saved"></ion-spinner>
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "885484629533",
+    "project_id": "mymealbackendframeworks",
+    "storage_bucket": "mymealbackendframeworks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885484629533:android:0d4665f760efc7b28e20f4",
+        "android_client_info": {
+          "package_name": "com.bastijns.felix.mymeal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885484629533-3o7t07eejte6g9rnh7untobc4d6sdsr7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bastijns.felix.mymeal",
+            "certificate_hash": "0f853ebbae169ba9588fe3f841c8f0b439b5dafb"
+          }
+        },
+        {
+          "client_id": "885484629533-e6ootikd325fsstgapph77jqggfp7mrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0t3Wi_XC_2x99IBA_aTjOmeT3nHPUZ5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885484629533-e6ootikd325fsstgapph77jqggfp7mrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

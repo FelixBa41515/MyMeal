@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="facebook_app_id">1848175802288143</string>
+  <string name="fb_login_protocol_scheme">fb1848175802288143</string>
+  <string name="facebook_client_token">ed7be4d54935c6f7ef8093bf1132d9be</string>
+    <string name="app_name">MyMeal</string>
+    <string name="title_activity_main">MyMeal</string>
+    <string name="package_name">com.bastijns.felix.mymeal</string>
+    <string name="custom_url_scheme">com.bastijns.felix.mymeal</string>
+</resources>
